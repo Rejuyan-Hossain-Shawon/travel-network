@@ -1,21 +1,41 @@
 
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Banner from './components/Banner/Banner';
-import Articles from './components/Articles/Articles';
-import CampInfrustructure from './components/CampInfrastructure/CampInfrustructure';
-import TourPrograms from './components/TourPrograms/TourPrograms';
+import AddNewProgram from './components/AddNewProgram/AddNewProgram';
+import AllOrders from './components/AllOrders/AllOrders';
+import Home from './components/Home/Home';
+import Login from './components/Login/Login';
+import MyOrders from './components/MyOrders/MyOrders';
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Banner></Banner>
-      <TourPrograms></TourPrograms>
-      <CampInfrustructure></CampInfrustructure>
-      <Articles></Articles>
-      <Footer></Footer>
+      <BrowserRouter>
+        <Header></Header>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/myorders">
+            <MyOrders></MyOrders>
+          </Route>
+          <Route path="/allorders">
+            <AllOrders></AllOrders>
+          </Route>
+          <Route path="/addnewprogram">
+            <AddNewProgram></AddNewProgram>
+          </Route>
+        </Switch>
+        <Footer></Footer>
+      </BrowserRouter>
     </div>
   );
 }

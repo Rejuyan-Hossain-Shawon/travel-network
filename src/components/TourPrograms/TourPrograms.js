@@ -5,7 +5,7 @@ import TourProgram from './TourProgram/TourProgram';
 const TourPrograms = () => {
     const [tourPrograms, setTourPrograms] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/programs')
+        fetch('https://grim-shadow-91675.herokuapp.com/programs')
             .then(res => res.json())
             .then(data => setTourPrograms(data))
     }, [])
