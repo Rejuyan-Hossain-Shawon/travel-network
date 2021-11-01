@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
+
 
 const Login = () => {
-    const { signInWithGoogle } = useFirebase()
+    const { signInWithGoogle } = useAuth()
 
 
     return (

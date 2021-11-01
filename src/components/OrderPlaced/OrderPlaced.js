@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
+
 
 const OrderPlaced = () => {
 
@@ -11,7 +12,7 @@ const OrderPlaced = () => {
 
     // user details 
 
-    const { user, isLoading } = useFirebase();
+    const { user, isLoading } = useAuth();
 
 
 
@@ -26,7 +27,7 @@ const OrderPlaced = () => {
         if (isLoading) {
             return <Spinner animation="border" />
         }
-        fetch('http://localhost:5000/program/order', {
+        fetch('https://grim-shadow-91675.herokuapp.com/program/order', {
             method: "POST",
             headers: {
                 'content-type': "application/json"

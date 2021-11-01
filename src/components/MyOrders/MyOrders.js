@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
+
 
 const MyOrders = () => {
-    const { user, isLoading } = useFirebase();
+    const { user, isLoading } = useAuth();
 
     const [myOrders, setMyOrders] = useState([]);
 
@@ -11,20 +12,20 @@ const MyOrders = () => {
         if (Object.keys(user).length === 0) {
             return <h1>wait</h1>
         }
-        fetch(`http://localhost:5000/myorders?email=${user?.email}`)
+        fetch(`https://grim-shadow-91675.herokuapp.com/myorders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
 
 
     }, [user])
 
-    console.log(myOrders);
+
 
 
     // delete onlclick
     const handleDeleteButton = (id) => {
-        console.log(id);
-        fetch(`http://localhost:5000/order/delete/${id}`, {
+
+        fetch(`https://grim-shadow-91675.herokuapp.com/order/delete/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

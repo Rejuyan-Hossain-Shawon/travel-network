@@ -1,14 +1,15 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
+
 
 const Header = () => {
-    const { user, logOut } = useFirebase();
+    const { user, logOut } = useAuth();
 
 
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar expand="lg" bg="dark" variant="dark">
             <Container>
                 <Navbar.Brand href="#home">Shawon Travel</Navbar.Brand>
                 <Navbar.Toggle />

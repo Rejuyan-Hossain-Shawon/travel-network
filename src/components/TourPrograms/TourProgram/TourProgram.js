@@ -1,12 +1,13 @@
 import React from 'react';
 import { Button, Card, Col, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../hooks/useFirebase';
+import useAuth from '../../../hooks/useAuth';
+
 
 const TourProgram = (props) => {
 
     const { title, description, price, picture, duration, _id } = props.tourProgram;
-    const { isLoading } = useFirebase();
+    const { isLoading } = useAuth();
     if (isLoading) {
         return <Button variant="primary" disabled>
             <Spinner
