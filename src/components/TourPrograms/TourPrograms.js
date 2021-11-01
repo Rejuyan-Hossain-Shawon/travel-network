@@ -9,7 +9,7 @@ const TourPrograms = () => {
             .then(res => res.json())
             .then(data => setTourPrograms(data))
     }, [])
-    console.log(tourPrograms);
+
     return (
         <div>
             <h1 className="fw-bolder">Tour Programs</h1>

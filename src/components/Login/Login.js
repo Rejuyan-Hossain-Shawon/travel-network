@@ -7,7 +7,7 @@ const Login = () => {
 
 
     return (
-        <div className="mt-5">
+        <div className="m-5 p-5">
             <Button onClick={signInWithGoogle}>Google Sign in</Button>
 
 

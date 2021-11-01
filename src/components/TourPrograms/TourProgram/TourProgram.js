@@ -1,9 +1,24 @@
 import React from 'react';
-import { Button, Card, Col } from 'react-bootstrap';
+import { Button, Card, Col, Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import useFirebase from '../../../hooks/useFirebase';
 
 const TourProgram = (props) => {
-    console.log(props.tourProgram);
-    const { title, description, price, picture, duration } = props.tourProgram;
+
+    const { title, description, price, picture, duration, _id } = props.tourProgram;
+    const { isLoading } = useFirebase();
+    if (isLoading) {
+        return <Button variant="primary" disabled>
+            <Spinner
+                as="span"
+                animation="grow"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+            />
+            Loading...
+        </Button>
+    }
 
     return (
         <Col>
@@ -16,7 +31,7 @@ const TourProgram = (props) => {
                         {description}
                     </Card.Text>
                 </Card.Body>
-                <Card.Footer><Button>Go for Holiday</Button></Card.Footer>
+                <Card.Footer><Link to={`/tourprogram/${_id}`}><Button>Go for Holiday</Button></Link></Card.Footer>
             </Card>
         </Col>
     );

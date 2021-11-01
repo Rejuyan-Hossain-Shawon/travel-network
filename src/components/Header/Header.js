@@ -5,7 +5,7 @@ import useFirebase from '../../hooks/useFirebase';
 
 const Header = () => {
     const { user, logOut } = useFirebase();
-    console.log(user);
+
 
     return (
         <Navbar bg="dark" variant="dark">

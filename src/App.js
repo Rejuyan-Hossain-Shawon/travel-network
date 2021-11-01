@@ -8,6 +8,8 @@ import Login from './components/Login/Login';
 import MyOrders from './components/MyOrders/MyOrders';
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
+import NotFound from './components/NotFound/NotFound'
+import OrderPlaced from './components/OrderPlaced/OrderPlaced';
 
 function App() {
   return (
@@ -32,6 +34,12 @@ function App() {
           </Route>
           <Route path="/addnewprogram">
             <AddNewProgram></AddNewProgram>
+          </Route>
+          <Route path="/tourprogram/:id">
+            <OrderPlaced></OrderPlaced>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
         </Switch>
         <Footer></Footer>
