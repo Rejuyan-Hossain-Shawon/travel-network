@@ -1,5 +1,7 @@
 import React from 'react';
 import { Card, CardGroup } from 'react-bootstrap';
+import logo from '../../images/logo.jpg'
+
 
 const Footer = () => {
     return (
@@ -9,7 +11,7 @@ const Footer = () => {
 
                     <Card.Body>
                         <Card.Title>
-                            {/* <img src={logo} alt="" /> */}
+                            <img width="30%" src={logo} alt="" />
                         </Card.Title>
                         <Card.Text>
                             Sed magna nulla, pulvinar vel ante vel, fringilla vulputate nibh. In placerat facilisis tincidunt. Integer quis erat dictum, placerat massa non, bibendum ante. Duis aliquet tellus magna, quis egestas enim vulputate sed. Phasellus in dui malesuada, lacinia urna sed.
