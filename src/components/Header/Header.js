@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <Navbar expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">Shawon Travel</Navbar.Brand>
+                <Navbar.Brand href="/home">Shawon Travel</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Nav.Link as={Link} to="/home">Home</Nav.Link>
